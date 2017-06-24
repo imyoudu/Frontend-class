@@ -3,5 +3,5 @@
 ##  课程目标：`开发信达科技博客`
 
 - 前期培训
-    - HTML、 CSS 基础
+    - HTML、 CSS 基础
     - javascript  基础
