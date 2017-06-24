@@ -1,0 +1,54 @@
+
+<!Doctype html>
+<html lang="zh-Hans">
+<!--
+    1. 块级元素、
+    2. 行内元素 width  height 无效
+    3. 元素转换
+    4. 文档流  -- 相对于盒子模型
+    5. 文本流  -- 相对于文子段落
+-->
+<head>
+    <meta charset="UTF-8">
+    <title>元素-第二节-前端培训-信达课堂</title>
+</head>
+
+<body>
+    <!--块级元素 start-->
+    <div>div</div>
+    <p>p</p>
+    <h1>h1 - h6</h1>
+    <ul>
+        <li>ul</li>
+        <li>li</li>
+        <li>ol</li>
+    </ul>
+    <!--块级元素 end -->
+
+    <!--行内元素 start-->
+    <span>span</span>
+    <i>i</i>
+    <!--<br> -->
+    <b>b</b>
+    <em>em</em>
+    <strong>strong</strong>
+    <a href="#">a</a>
+    <img src="./assets/img/avatar_10.png" width='30' alt="">
+    <!--行内元素 end -->
+
+    <!--元素转换 start-->
+    <style>
+        .b{margin-top: 20px;}
+        .b strong{ 
+            color: red; 
+            width: 200px; height: 100px; 
+            display: inline-block;
+        }
+    </style>
+    <div class="b">
+        Finally make it to your cubicle, where you open your last <strong>‘late late night’</strong> sleep mode laptop. As soon as you fire it up – there you have 10+ IMs window already opened and yellow marked to let you know people are desperate for your replies and then there your inbox running out of storage with emails from build server reports, bug tracker, your managers concern about roles in community initiatives, last nights meeting email thread and then HR emails on how you can have a great life and benefits of this MNC.
+    </div>
+    <!--元素转换 end-->
+
+</body>
+</html>

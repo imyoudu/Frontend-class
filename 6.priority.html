@@ -1,0 +1,62 @@
+<!Doctype html>
+<html lang="zh-Hans">
+
+<head>
+    <meta charset="UTF-8">
+    <title>CSS优先级-第一节-前端培训-信达课堂</title>
+    <style>
+        * {
+            /*background-color: pink;*/
+        }
+
+        .curry.mvp{
+            color: pink;
+        }
+        .curry.mvp{
+            color: #000000;
+        }
+        .durant.mvp{
+            color: rgb(255, 0, 0);
+        }
+        #mvp{
+            color: #00f
+        }
+        .mvp{
+            font-size: 30px;
+            color: #f00
+        }
+        .curry {
+            color: #000;
+        }
+        p{
+            color: #027702;
+        }
+        .xinda{
+            color: #027702;
+            /*text-indent: 50px;*/
+            
+            text-decoration: underline;
+        }
+    </style>
+</head>
+
+<body>
+    <!--<h1>民工杜MVP</h1>-->
+    <!--<p>民工杜MVP</p>-->
+    <p class="mvp">民工杜MVP</p>
+    <!--<p id="mvp">民工杜MVP</p>-->
+    <!--<p class="mvp durant" id="durant">民工杜MVP</p>-->
+    <p class="curry">库里真苦力</p>
+    <p class="mvp curry" id="curry">库里真苦力</p>
+    <!--<p style="">民工杜MVP</p>-->
+
+    <div class="xinda">
+        <div>
+            信达课堂
+            <div>信达课堂</div>
+        </div>
+        <span>我是子节点</span>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,53 @@
+
+<!Doctype html>
+<html lang="zh-Hans">
+<!--
+    1. 缩进与水平对齐 (居中对齐)
+    2. 行高
+    3. 垂直对齐文本
+    4. 字符间隔 letter-spacing
+    5. 文本转换  大小写
+    6. 文本装饰
+    7. 文本换行 word-break  white-space
+-->
+<head>
+    <meta charset="UTF-8">
+    <title>文本-第二节-前端培训-信达课堂</title>
+</head>
+
+<body>
+    <!--缩进 start-->
+    <style>
+        .a { text-indent: 2em; font-size: 20px; border: 1px solid #ddd; }
+    </style>
+    <p class="a">有度即时通是围绕移动互联网特点设计的企业即时通讯工具，是经过腾讯认证的手机RTX解决方案；支持与微信消息互通；通过集中管理的组织架构进行内部交流，支持全平台不同终端之间的信息完整同步，充分提高沟通效率。目前客户遍布在各个行业，在国内大中型企事业单位当中得到广泛应用。</p>
+    <!--缩进 end -->
+    <!--水平对齐 left start-->
+    <style>
+        .b { text-align: left; }
+    </style>
+    <p class="b">Finally make it to your cubicle, where you open your last ‘late late night’ sleep mode laptop. As soon as you fire it up – there you have 10+ IMs window already opened and yellow marked to let you know people are desperate for your replies and then there your inbox running out of storage with emails from build server reports, bug tracker, your managers concern about roles in community initiatives, last nights meeting email thread and then HR emails on how you can have a great life and benefits of this MNC.</p>
+    <!--水平对齐 left end -->
+    <!--2端对齐 justify start-->
+    <style>
+        .c { text-align: justify }
+    </style>
+    <p class="c">Finally make it to your cubicle, where you open your last ‘late late night’ sleep mode laptop. As soon as you fire it up – there you have 10+ IMs window already opened and yellow marked to let you know people are desperate for your replies and then there your inbox running out of storage with emails from build server reports, bug tracker, your managers concern about roles in community initiatives, last nights meeting email thread and then HR emails on how you can have a great life and benefits of this MNC.</p>
+    <!--2端对齐 justify end -->
+
+    <!--2端对齐 justify start-->
+    <style>
+        .d { 
+            font-size: 12px; 
+            vertical-align: sub; 
+            /*letter-spacing: 2px; */
+            /*text-transform: uppercase; */
+            /*text-decoration: underline;*/
+            /*word-break: break-all;*/
+            /*white-space: nowrap;*/
+        }
+    </style>
+    <p>Finally make it to your cubicle, <span class="d">where you open</span> your last ‘late late night’ sleep mode laptop. As soon as you fire it up – there you have 10+ IMs window already opened and yellow marked to let you know people are desperate for your replies and then there your inbox running out of storage with emails from build server reports, bug tracker, your managers concern about roles in community initiatives, last nights meeting email thread and then HR emails on how you can have a great life and benefits of this MNC.</p>
+    <!--2端对齐 justify end -->
+</body>
+</html>

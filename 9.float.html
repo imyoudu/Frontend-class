@@ -1,0 +1,53 @@
+<!Doctype html>
+<html lang="zh-Hans">
+<!--
+    1. 浮动基础
+    2. 浮动引起的布局变化
+    3. 清除浮动
+-->
+<head>
+    <meta charset="UTF-8">
+    <title>浮动-第二节-前端培训-信达课堂</title>
+    <style>
+        .box{ width: 300px; height: 400px; background-color: #247ef9; padding: 10px; color: #fff; margin-bottom: 100px; }
+        .box img{ }
+    </style>
+</head>
+
+<body>
+
+    <!--浮动基础 start-->
+    <style>
+        .box img{ float: left; width: 50px; margin-right: 10px; }
+    </style>
+    <div class="box">
+        於經常和動 
+        <img src="./assets/img/avatar_05.png" alt=""> 
+        畫開發打交道的開發者對於Animate.css這個動畫庫不會陌生，它把一些常見的動畫效果都封裝起來了，非常實用。但是有時候在開發中，僅僅只是需要某一兩個動畫效果，把整個CSS文件都引入，這樣不是太好。
+
+需求就出現了，能不能有一個工具可以直接預覽Animate.css對應的動畫效果，並且生成對應的動畫代碼呢？
+
+作為一個UI開發，平時跟Chrome瀏覽器打交道最多，於是就整了一個Chrome插件可以及時預覽對應Animate.css中的動畫效果並生成對應的動畫代碼，這樣在實際開發中<img src="./assets/img/avatar_05.png" alt=""> 碰到一些需要使用到Animate.css中的動畫效果時，可以大大的提高我們的開發效率。
+
+    </div>
+    <!--浮动基础 end -->
+    <!--宽度变化 引起的浮动效果-->
+
+    <!--清除浮动 start -->
+    <style>
+        .item{ float: left; width: 50px; height: 50px; margin: 10px; background-color: #222; }
+        .clear{clear: both;}
+    </style>
+    <div class="box">
+        <div class="item">1</div>
+        <div class="item">2</div>
+        <div class="item">3</div>
+        <div class="clear"></div>
+        <div class="item">4</div>
+        <div class="item">5</div>
+        <div class="item">6</div>
+        <div class="item">7</div>
+    </div>
+    <!--清除浮动 end -->
+</body>
+</html>

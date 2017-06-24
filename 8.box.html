@@ -1,0 +1,124 @@
+<!Doctype html>
+<html lang="zh-Hans">
+<!--
+    1. 盒子模型构成
+    2. width
+    3. height  如何计算宽度？
+    4. margin  外边距
+        a. 合并、 水平居中
+        b. 行内元素的margin
+    5. padding  内边距
+        a. 行内元素的 padding
+        b. img 的padding
+    6. border  边框
+    7. overflow 溢出
+-->
+<head>
+    <meta charset="UTF-8">
+    <title>盒子模型-第二节-前端培训-信达课堂</title>
+    <style>
+        html{font-size: 14px;}
+        div{ background-color: #333; margin-bottom: 10px;}
+        p{  background-color: #119999;  color: #fff; line-height: 100px; text-align: center;     }
+    </style>
+</head>
+
+<body>
+
+    <!--盒子模型构成 start-->
+    <style>
+        html{font-size: 14px;}
+        .a { padding: 2rem; }
+        .a p{ 
+            background-color: #119999;
+            color: #fff; 
+
+            width: 100px;
+            height: 100px;
+            /* TRBL  top right bottom left */
+            margin: 30px 30px 30px 30px; 
+            padding: 10px 20px 30px 40px;  
+            /*overflow: hidden;*/
+        }
+    </style>
+    <div class="a">
+        <p>
+            盒子模型
+        </p>
+    </div>
+    <!--盒子模型构成 end -->
+
+    <!--margin  外边距 start-->
+    <style>
+        .b{overflow: hidden;}
+        .b p{ 
+            background-color: #119999;
+            color: #fff; 
+
+            width: 100px;
+            height: 100px;
+            /*t r b l*/
+            margin: 30px auto; 
+            padding: 20px;
+            border-width: 3px;
+            /*margin: 30px auto 30px; */
+            /*overflow: hidden;*/
+        }
+    </style>
+    <div class="b">
+        <p>
+            盒子模型
+        </p>
+        <p>
+            盒子模型
+        </p>
+        <p>
+            盒子模型
+        </p>
+    </div>
+    <!--margin  外边距 end -->
+
+    <!--border 边框 start-->
+    <style>
+        .c p{ 
+            width: 100px;
+            height: 100px;
+            
+            border: 12px solid red;
+            border-right-color: #fff;
+            /*border-top-color: red;
+            border-top-width: 12px;
+            border-top-style: dashed;*/
+
+            /*margin: 30px auto 30px; */
+            /*overflow: hidden;*/
+        }
+    </style>
+    <div class="c">
+        <p>
+            盒子模型
+        </p>
+    </div>
+    <!--border 边框 end -->
+
+
+    <!--margin  -100px  start-->
+    <style>
+        .d{margin-top: 40px;}
+        .d span{ 
+            margin: 80px 20px;
+            padding: 10px;
+            background-color: #119999;
+        }
+        .d span:nth-child(2){
+            background-color: red;
+            /*margin-left: -10px;*/
+        }
+    </style>
+    <div class="d">
+        <span>1</span><span>2</span><span>3</span>
+    </div>
+    <!--border 边框 end -->
+
+</body>
+</html>

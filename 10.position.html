@@ -1,0 +1,53 @@
+<!Doctype html>
+<html lang="zh-Hans">
+<!--
+    1. 定位基础
+    2. 位置 - 如何使得元素定位于其父级元素内
+    3. 层显示优先
+-->
+<head>
+    <meta charset="UTF-8">
+    <title>定位-第二节-前端培训-信达课堂</title>
+    <style>
+        .box{ width: 300px; height: 400px; background-color: #247ef9; padding: 10px; color: #fff; }
+    </style>
+</head>
+
+<body>
+    <!--定位基础 start-->
+    <style>
+        .box img{
+            width: 50px; 
+            /*opacity: .7;*/
+            margin-right: 10px; 
+            position: absolute;
+            left: 20px;
+            top: 30px;
+            /*position: fixed; */
+            /*position: relative;*/
+        }
+        .box img:nth-child(1){
+            z-index: 999
+        }
+        .box img:nth-child(2){
+            z-index: 1
+        }
+    </style>
+    <div class="box">
+        於經常和動  畫開發打交道的開發者對於Animate.css這個動畫庫不會陌生，它把一些常見的動畫效果都封裝起來了，非常實用。但是有時候在開發中，僅僅只是需要某一兩個動畫效果，把整個CSS文件都引入，這樣不是太好。
+
+需求就出現了，能不能有一個工具可以直接預覽Animate.css對應的動畫效果，並且生成對應的動畫代
+<img src="./assets/img/avatar_05.png" alt="">碼呢？
+
+作為一個UI開發，平時跟Chrome瀏覽器打交道最多，於是<img src="./assets/img/avatar_10.png" alt="">就整了一個Chrome插件可以及時預覽對應Animate.css中的動畫效果並生成對應的動畫代碼，這樣在實際開發中碰到一些需要使用到Animate.css中的動畫效果時，可以大大的提高我們的開發效率。
+
+    </div>
+    <!--定位基础 end -->
+    <ul>
+        <li>absolute	 生成绝对定位的元素，相对于 static 定位以外的第一个父元素进行定位</li>
+        <li>fixed	    生成绝对定位的元素 相对于浏览器窗口进行定位</li>
+        <li>relative    生成相对定位的元素，相对于其正常位置进行定位</li>
+        <li>static      默认值</li>
+    </ul>
+</body>
+</html>

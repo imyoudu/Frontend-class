@@ -1,0 +1,97 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+/*伪类选择器*/
+a:link{
+    color: #5199e2;
+}
+a:hover{
+    color: black;
+}
+a:active{
+    color: #eee;
+}
+a:visited{
+    color: red;
+}
+
+
+table,
+td,
+th{
+    border: 1px solid #999;
+    border-collapse: collapse;
+}
+table{
+    width: 90%;
+}
+td{
+    padding: 10px;
+    font-size: 18px;
+    color: #999;
+}
+img{
+    border: 0;
+    border-radius: 100%;
+    width: 50px;
+}
+
+
+#girl{
+    color: #f3c;   
+}
+
+.name {
+    color: #5199e2;
+    font-size: 14px;
+}
+.shuaige{
+    color: #f10;
+}
+
+
+
+button {
+    width: 60px;
+    height: 20px;
+    border: 1px solid #999;
+    background-color: #fff;
+    cursor: pointer;
+}
+button:hover{
+    background-color: #333;
+    color: #fff;
+}
+
+/*UI元素状态选择器 */
+button:disabled{
+    cursor: not-allowed;
+    background-color: #999;
+    color: #333;
+}
+
+/* 层次选择器 属性选择器  UI元素状态选择器 */
+input[type="checkbox"]:checked + span{
+    background-color: #f00;
+    color: #fff;
+}
+
+/*结构伪类选择器*/
+tbody tr:nth-child(odd){
+    background-color: blue;
+}
+
+td:nth-child(3) {
+    text-align: right;
+}
+
+/*否定伪类选择器*/
+th:not(.img) {
+    font-size: 13px;
+    font-weight: 400
+}
+
+#child > p{
+    color: red;
+}
