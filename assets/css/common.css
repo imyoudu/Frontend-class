@@ -1,0 +1,121 @@
+body{
+    width: 700px;
+    margin: 0 auto;
+    background-color: #f1f1f1;
+}
+
+/*伪类选择器*/
+a:link{
+    color: #389afd;
+}
+a:hover{
+    color: #187ee4;
+    text-decoration: underline;
+}
+a:active{
+    color: #0955a1;
+}
+a:visited{
+    color: #ababab;
+}
+
+
+/*************************
+header
+**************************/
+.header{
+    /*height: 50px;*/
+    /*padding: 10px 0;*/
+    background-color: #000;
+    color: #fff;
+    overflow: hidden;
+    line-height: 50px;
+}
+
+.logo{
+    float: left;
+    text-indent: 15px;
+}
+
+
+
+/*************************
+menu
+**************************/
+.menu{
+    float: right;
+}
+
+.menu li{
+    float: left;
+}
+.menu a{
+    display: block;
+    color: #fff;
+    padding: 0 14px;
+}
+.menu a:hover{
+    background-color: #5199e2;
+}
+
+/*************************
+banner
+**************************/
+.banner img{
+    max-width: 100%;
+    display: block;
+}
+
+/*************************
+footer
+**************************/
+.footer{
+    clear: both;
+}
+.copyright{
+    border-top: 1px solid #bbb;
+    padding: 15px 0;
+    text-align: center;
+    color: #999;
+    font-size: 12px;
+}
+
+
+/*************************
+box
+**************************/
+.box{
+    overflow: hidden;
+    margin: 20px 0;
+    min-height: 300px;
+}
+.l,.r {
+    margin-bottom: 30px;
+    /*background-color: #333;*/
+    width: 200px;
+    padding-bottom: 9999px;
+    margin-bottom: -9999px;
+}
+.l{float: left; margin-right: 20px;}
+.r{float: right; margin-left: 20px;}
+.cell {
+    display: table-cell; width: 9999px;
+    *display: inline-block; *width: auto;
+}
+
+.widget{
+    padding: 0 10px;
+    border-radius: 5px;
+    border: 1px solid #bfcbd9;
+}
+.widget-header{
+    line-height: 30px;
+    border-bottom: 1px dashed #bfcbd9;
+}
+.widget-con{
+    padding: 10px 0;
+}
+
+.widget + .widget{
+    margin-top: 15px;
+}

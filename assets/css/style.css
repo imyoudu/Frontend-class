@@ -1,0 +1,50 @@
+/*************************
+index post area
+**************************/
+.post-area-frame{
+    overflow: hidden;
+    margin: 20px 0;
+}
+.post-item{
+    float: left;
+    width: 205px;
+    margin-left: 20px;
+    margin-bottom: 10px;
+}
+.post-item a{
+    display: block;
+    width: 100%;
+}
+.post-item img{
+    max-width: 100%;
+}
+
+.post-item h3{
+    line-height: 24px;
+    color: #333;
+}
+
+.post-item a:hover h3{
+    color: #5199e2;
+}
+
+.article-list li{
+    margin-bottom: 10px;
+}
+.article-list a{
+    display: block;
+    font-size: 12px;
+}
+
+.article-content{
+    line-height: 1.5;
+}
+.article-content h2{
+    font-size: 16px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #bfcbd9;
+}
+.article-content p{
+    margin: 20px 10px;
+    text-indent: 2em;
+}

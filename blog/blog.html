@@ -1,0 +1,122 @@
+<!Doctype html>
+<html lang="zh-Hans">
+<!--
+    本文档意在引领同学学习前端，从实际出发，主要讲解知识点：
+    1. 讲述开发  index.html 中遇到的问题
+        a. reset css 重置
+        b. inherit  css 继承
+        c. 如何正确的使用float
+        d. position rtbl 0
+        e. overflow
+        f. 用 table 实现布局
+    6. 文本、字体
+-->
+<head>
+    <meta charset="UTF-8">
+    <title>大数据浪潮下的前端工程师-信达科技博客-前端培训-信达课堂</title>
+    <link rel="stylesheet" href="../assets/css/reset.css">
+    <link rel="stylesheet" href="../assets/css/common.css">
+    <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+
+<body>
+    <style>
+        *{
+            overflow: :
+        }
+    </style>
+    <!--网站头部 header  start -->
+    <div class="header">
+        <div class="logo">
+            <h1>信达科技博客</h1>
+        </div>
+        <!--网站导航 menu start  -->
+        <div class="menu">
+            <ul>
+                <li><a href="#">后台</a></li>
+                <li><a href="#">前端</a></li>
+                <li><a href="#">iOS</a></li>
+                <li><a href="#">Android</a></li>
+            </ul>
+        </div>
+        <!--网站导航 menu end  -->
+    </div>
+    <!--网站头部 header  end -->
+
+    <!--网站宣传栏 banner start  -->
+    <div class="banner">
+        <img src="../assets/img/divider-bg.jpg" alt="">
+    </div>
+    <!--网站宣传栏 banner end  -->
+
+    <div class="main">
+        <div class="box">
+            <aside class="l">
+                <div class="widget article-list">
+                    <div class="widget-header">
+                        <h4>最新文章</h4>
+                    </div>
+                    <div class="widget-con">
+                        <ul>
+                            <li><a href="#" title="Facebook 发布 React VR 来简化 Web 中虚拟现实应用的开发">Facebook 发布 React VR 来简化 Web 中虚拟现实应用的开发</a></li>
+                            <li><a href="#" title="Chrome 59 即将支持 Headless 模式">Chrome 59 即将支持 Headless 模式</a></li>
+                            <li><a href="#" title="斯坦福教授决定放弃Java，使用JavaScript作为教学语言">斯坦福教授决定放弃Java，使用JavaScript作为教学语言</a></li>
+                            <li><a href="#" title="从零开始基于 JavaScript 构建简单神经网络">从零开始基于 JavaScript 构建简单神经网络</a></li>
+                            <li><a href="#" title="大数据浪潮下的前端工程师">大数据浪潮下的前端工程师</a></li>
+                            <li><a href="#" title="从前端工程师到AR工程师">从前端工程师到AR工程师</a></li>
+                            <li><a href="#" title="AniX css动画库">AniX css动画库</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="widget article-list">
+                    <div class="widget-header">
+                        <h4>最热文章</h4>
+                    </div>
+                    <div class="widget-con">
+                        <ul>
+                            <li><a href="#" title="Facebook 发布 React VR 来简化 Web 中虚拟现实应用的开发">Facebook 发布 React VR 来简化 Web 中虚拟现实应用的开发</a></li>
+                            <li><a href="#" title="Chrome 59 即将支持 Headless 模式">Chrome 59 即将支持 Headless 模式</a></li>
+                            <li><a href="#" title="斯坦福教授决定放弃Java，使用JavaScript作为教学语言">斯坦福教授决定放弃Java，使用JavaScript作为教学语言</a></li>
+                            <li><a href="#" title="从零开始基于 JavaScript 构建简单神经网络">从零开始基于 JavaScript 构建简单神经网络</a></li>
+                            <li><a href="#" title="大数据浪潮下的前端工程师">大数据浪潮下的前端工程师</a></li>
+                            <li><a href="#" title="从前端工程师到AR工程师">从前端工程师到AR工程师</a></li>
+                            <li><a href="#" title="AniX css动画库">AniX css动画库</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </aside>
+            <!--<div class="r">fewfewfw</div>-->
+            <div class="cell">
+                <article class="article-content">
+                    <h2>大数据浪潮下的前端工程师</h2>
+                    <p>马云曾经说过『人类正从IT时代走向DT时代』。正如他所言，今天几乎所有的互联网公司背后都有一支规模庞大的数据团队和一整套数据解决方案作决策，这个时代已经不是只有硅谷巨头才玩数据的时代，是人人都在依赖着数据生存，可以说如今社会数据价值已经被推到前所未有的高度。</p>
+                    <p>我作为一名前端工程师，在阿里巴巴数据团队工作多年，深入了解数据生产加工链路与产品化。我们这群前端是与界面最近的工程师们，似乎与数据离得很远，对于我们来说与数据有些怎样连接呢。</p>
+                    <p>完整数据链路</p>
+                    <p>业界常提到的 Hadoop、Spark、Druid 都在用户侧的下方，也就是数据研发与数据挖掘职能的工作。相对于前端职能而言，一定是与输出终端相关，包括本职工作数据类产品的研发，如阿里指数或百度指数这样的数据展示型产品，还有较为复杂的 BI 工具等，细分起来，最特别的工作应该是数据采集和数据可视化的工作。</p>
+                    <p>但到今天而言，数据研发工程师已经很难说只精通其中一种技术。任何一环深入下去都涉及到整条链路的打通，我就从数据采集、数据可视化、数据产品研发到人工智能几个板块来写写我的体会与经验。</p>
+                    <p>数据采集</p>
+                    <p>过去还是流量为王的年代，流量就意味着钱，互联网都用着简单粗爆的方式导流。在过去做过站长的对数据采集已然不陌生，包括著名的第三方平台 CNZZ（现友盟+） 和 google analytics 两个平台几乎都使用过。</p>
+                    <p>基本原理</p>
+                    <p>Web 端的数据采集的链路从客户端或后端开始一直到存储结束。因此，数据采集这个动作涉及到了前端、客户端、数据研发、产品经理等职位的参与。在这个过程中，前端工程师的工作集中在不同客户端上（PC、iOS、Android）的信息收集及埋点上。</p>
+                    <p>再说到采集应用信息这件事，系统可以采集到的信息越丰富，那么数据可分析的内容就越多。数据采集在 Web 端可以分为几个步骤，包括前端 JS 加载，触发事件时收集各种浏览器端的信息，根据用户行为上报日志服务器。</p>
+                </article>
+            </div>
+        </div>
+    </div>
+
+    <!--网站底部 footer start  -->
+    <div class="footer">
+        <div class="contact">
+
+        </div>
+        <div class="copyright">
+            珠海信达九州科技有限公司 &copy; 2017 xinda.im All Rights Reserved
+        </div>
+    </div>
+    <!--网站底部 footer start  -->
+
+    
+    
+</body>
+
+</html>
