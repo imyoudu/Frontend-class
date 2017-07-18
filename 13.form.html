@@ -1,0 +1,106 @@
+
+<!Doctype html>
+<html lang="zh-Hans">
+<!--
+    1. 元素表单
+    2. jQuery 选择器
+    3. jQuery 控制属性
+    4. jQuery 插入 删除
+    5. jQuery 节点遍历
+    6. jQuery 事件
+-->
+<head>
+    <meta charset="UTF-8">
+    <title>表单-第二节-前端培训-信达课堂</title>
+    <link rel="stylesheet" href="./assets/css/reset.css">
+    <link rel="stylesheet" href="./assets/css/common.css">
+    <style>
+        html,body{height: 100%; }
+        body{
+            box-sizing: border-box;
+            background: url(./assets/img/bg.jpg) no-repeat center center;
+            background-attachment:fixed;
+            background-size: auto 100%;
+        }
+        .box{
+            width: 400px;
+            background-color: rgba(0, 0, 0, .6);
+            color: #fff;
+            border: 1px solid rgba(255, 255, 255, .6);
+            position: absolute;
+            left: 50px;
+            top: 50px;
+            border-radius: 3px;
+        }
+        .box-title{
+            height: 40px;
+            line-height: 40px;
+            text-indent: 15px;
+            border-bottom: 1px solid rgba(255, 255, 255, .6);
+        }
+        .box-con{
+            padding: 15px;
+        }
+        .form legend{
+
+        }
+        .form .form-group{
+            position: relative;
+            padding: 20px 0 5px;
+        }
+        .form .form-group-title2{
+            position: absolute;
+            left: 1px;
+            top: 16px;
+            font-size: 16px;
+            transition: all .2s ease;
+        }
+        .form input[type='text'] {
+            background-color: transparent;
+            outline: none;
+            color: #fff;
+            border: 0 none;
+            border-bottom: 1px solid #888;
+            width: 100%;
+            height: 30px;
+            line-height: 30px;
+            margin-left: 0;
+            transition: all .2s ease;
+        }
+        .form input[type='text']:focus {
+            border-color: #fff;
+        }
+        .form input[type='text']:focus + .form-group-title{
+            top: 5px;
+            font-size: 12px;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <div class="box-title">
+            注册账号
+        </div>
+        <div class="box-con">
+            <form class="form">
+                <fieldset>
+                    <legend class="off">基本信息</legend>
+                    <div class="form-group">
+                        <input type="text" name="name" id="name">
+                        <label for="name" class="form-group-title form-group-title2">名字</label>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" name="age" id="age">
+                        <label for="age" class="form-group-title form-group-title2">年龄</label>
+                    </div>
+                    <div class="form-group">
+                        <span class="form-group-title">性别</span>
+                        <input type="radio" name="sex" id="male" value="1" checked><label for="">男</label>
+                        <input type="radio" name="sex" id="female" value="0"><label for="">女</label>
+                    </div>
+                </fieldset>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
