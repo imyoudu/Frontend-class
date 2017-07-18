@@ -55,7 +55,7 @@
             font-size: 16px;
             transition: all .2s ease;
         }
-        .form input[type='text'] {
+        .form-group input[type='text'] {
             background-color: transparent;
             outline: none;
             color: #fff;
@@ -67,12 +67,20 @@
             margin-left: 0;
             transition: all .2s ease;
         }
-        .form input[type='text']:focus {
+        .form-group.err input[type='text'],
+        .form-group.success input[type='text'],
+        .form-group input[type='text']:focus {
             border-color: #fff;
         }
+        .form-group.err input[type='text'] + .form-group-title,
+        .form-group.success input[type='text'] + .form-group-title,
         .form input[type='text']:focus + .form-group-title{
             top: 5px;
             font-size: 12px;
+        }
+        .form-group.err::after{
+            content: '';
+            display: block;
         }
     </style>
 </head>
@@ -85,11 +93,11 @@
             <form class="form">
                 <fieldset>
                     <legend class="off">基本信息</legend>
-                    <div class="form-group">
+                    <div class="form-group err">
                         <input type="text" name="name" id="name">
                         <label for="name" class="form-group-title form-group-title2">名字</label>
                     </div>
-                    <div class="form-group">
+                    <div class="form-group success">
                         <input type="text" name="age" id="age">
                         <label for="age" class="form-group-title form-group-title2">年龄</label>
                     </div>
