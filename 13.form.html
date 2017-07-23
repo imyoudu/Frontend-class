@@ -3,17 +3,34 @@
 <html lang="zh-Hans">
 <!--
     1. 元素表单
-    2. jQuery 选择器
+    2. jQuery 选择器 跟css 完全一致的选择器
     3. jQuery 控制属性
+        1. class hasClass addClass removeClass
+        2. attr prop
+        3. val
+        4. data
     4. jQuery 插入 删除
+        1. remove
+        2. append
+        3. prepend
     5. jQuery 节点遍历
+        1. parent parents  
+        2. children find
+        3. next prev  nextAll prevAll
     6. jQuery 事件
+        1. click
+        2. mouseenter mouseleave mouseover hover
+        3. dbclick 
+        4. keydown keypress keyup
+        3. input change select submit reset focus 
+        4. resize scroll
 -->
 <head>
     <meta charset="UTF-8">
     <title>表单-第二节-前端培训-信达课堂</title>
     <link rel="stylesheet" href="./assets/css/reset.css">
     <link rel="stylesheet" href="./assets/css/common.css">
+    <script src="./assets/js/jquery.min.js"></script>
     <style>
         html,body{height: 100%; }
         body{
@@ -23,6 +40,7 @@
             background-size: auto 100%;
         }
         .box{
+            /* display: none; */
             width: 400px;
             background-color: rgba(0, 0, 0, .6);
             color: #fff;
@@ -33,6 +51,7 @@
             border-radius: 3px;
         }
         .box-title{
+            position: relative;
             height: 40px;
             line-height: 40px;
             text-indent: 15px;
@@ -40,6 +59,28 @@
         }
         .box-con{
             padding: 15px;
+        }
+        .close {
+            position: absolute;
+            right: 0;
+            top: 0;
+            width: 40px;
+            height: 39px;
+            background:  url(./assets/img/close.png) no-repeat center center;
+            background-color: rgba(253, 71, 71, 0);
+            cursor: pointer;
+        }
+        .close:hover{
+            background-color: rgba(253, 71, 71, 1);
+        }
+        fieldset+fieldset{
+            margin-top: 15px;
+        }
+        .btn-group{
+            text-align: right;
+        }
+        button{
+            padding: 5px 8px;
         }
         .form legend{
 
@@ -78,37 +119,253 @@
             top: 5px;
             font-size: 12px;
         }
+        .form-group.success::after,
         .form-group.err::after{
             content: '';
             display: block;
+            width: 20px;
+            height: 20px;
+            position: absolute;
+            right: 0;
+            bottom: 15px;
+            background: url(./assets/img/1000_034.png)
         }
+        .form-group.err input[type='text']{
+            border-color: #fd5353;
+        }
+        .form-group.success input[type='text']{
+            border-color: #43ab04;
+        }
+        .form-group.success::after{
+            background: url(./assets/img/1000_035.png)
+        }
+        
     </style>
 </head>
 <body>
+    <script>
+        
+    </script>
     <div class="box">
-        <div class="box-title">
+        <div class="box-title" 
+        account="dico-- account"
+        name="1"
+        data-account="1">
             注册账号
+            <div class="close" id="close"></div>
         </div>
+        <script>
+            
+    $(".box-title").addClass('title1 title2 ')
+    $(".box-title").attr('title', '注册账户')
+    console.log($(".box-title").attr('account'))
+    console.log($(".box-title").attr('name'))
+    console.log($(".box-title").data('account', 'fff'))
+</script>
         <div class="box-con">
             <form class="form">
                 <fieldset>
-                    <legend class="off">基本信息</legend>
-                    <div class="form-group err">
+                    <legend><span>[-]</span> 基本信息</legend>
+                    <div class="form-group ">
                         <input type="text" name="name" id="name">
                         <label for="name" class="form-group-title form-group-title2">名字</label>
                     </div>
-                    <div class="form-group success">
-                        <input type="text" name="age" id="age">
-                        <label for="age" class="form-group-title form-group-title2">年龄</label>
+                    <div class="form-group ">
+                        <input type="text" name="age" id="age" value='11111111'>
+                        <label for="age" class="form-group-title form-group-title2" >年龄</label>
                     </div>
                     <div class="form-group">
                         <span class="form-group-title">性别</span>
-                        <input type="radio" name="sex" id="male" value="1" checked><label for="">男</label>
-                        <input type="radio" name="sex" id="female" value="0"><label for="">女</label>
+                        <input type="radio" name="sex" id="male" value="1" checked><label for="male">男</label>
+                        <input type="radio" name="sex" id="female" value="0"><label for="female">女</label>
                     </div>
+                    
+                </fieldset>
+                <fieldset>
+                    <legend><span>[-]</span> 职业信息</legend>
+                    <div class="form-group ">
+                        <label for="type" class="form-group-title">职业类型</label>
+                        <select name="type" id="type">
+                            <option value="">请选择</option>
+                            <optgroup label="开发">
+                                <option value="1">后台</option>
+                                <option value="2">前端</option>
+                                <option value="3">iOS</option>
+                                <option value="4">Android</option>
+                                <option value="5">window</option>
+                            </optgroup>
+                            <optgroup label="设计">
+                                <option value="7">北京</option>
+                                <option value="8">黑龙江</option>
+                                <option value="9">内蒙古</option>
+                            </optgroup>
+                        </select>
+                    </div>
+                    <div class="form-group ">
+                        <input type="text" name="position" id="position">
+                        <label for="position" class="form-group-title form-group-title2">职位</label>
+                    </div>
+                </fieldset>
+                <fieldset class="btn-group">
+                    <button type="button">增加职业信息</button>
+                    <button type="submit">确定</button>
+                    <button type="button">取消</button>
                 </fieldset>
             </form>
         </div>
     </div>
 </body>
+
+<script>
+    // jQuery API  http://www.css88.com/jqapi-1.9/
+    var number = 1;
+    var string = '字符串';
+    var object = {};
+    var array = [];
+    var fun = function(){};
+
+    var position = '<fieldset>' +
+                    '<legend><span>[-]</span> 职业信息</legend>' +
+                    '<div class="form-group ">' +
+                        '<label for="type" class="form-group-title">职业类型</label>' +
+                        '<select name="type" id="type">' +
+                            '<option value="">请选择</option>' +
+                            '<optgroup label="开发">' +
+                                '<option value="1">后台</option>' +
+                                '<option value="2">前端</option>'+
+                                '<option value="3">iOS</option>'+
+                                '<option value="4">Android</option>'+
+                                '<option value="5">window</option>'+
+                            '</optgroup>'+
+                            '<optgroup label="设计">'+
+                                '<option value="7">北京</option>'+
+                                '<option value="8">黑龙江</option>'+
+                                '<option value="9">内蒙古</option>'+
+                            '</optgroup>'+
+                        '</select>'+
+                    '</div>'+
+                    '<div class="form-group ">'+
+                        '<input type="text" name="position2" id="position2">'+
+                        '<label for="position" class="form-group-title form-group-title2">职位</label>'+
+                    '</div>' +
+                '</fieldset>' ;
+    var Reg = {
+        username: function(value) {
+            var r = /^[a-zA-Z0-9_-]{4,16}$/;
+            return r.test(value);
+        },
+        num: function(value) {
+            var r = /^[0-9]{0,2}$/;
+            return r.test(value);
+        },
+        chs: function(value) {
+            var r = /[\u4E00-\u9FA5]/ig;
+            return r.test(value);
+        }
+    }
+    $(window).ready(function () {
+        $("#close").click(function(){
+            $(this).parents('.box').first().remove();
+        })
+        // $("#close").mouseenter(function(){
+        //     console.log('enter')
+        // })
+        // $("#close").mouseleave(function(){
+        //     console.log('mouseleave')
+        // })
+        // $("#close").mousemove(function(){
+        //     console.log('mousemove')
+        // })
+        $("#close").hover(function(){
+            console.log('enter')
+        }, function(){
+            console.log('leave')
+        });
+        $('.form').submit(function() {
+            return false;
+        })
+
+        // $('legend').click(function() {
+        // $('legend').on('click', function() {
+        $(document).on('click', 'legend', function() {
+            var self = $(this)
+            self.siblings().slideToggle(200);
+            if (self.hasClass('off')) {
+                self.removeClass('off').find('span').html('<p>[-]</p>')
+            } else {
+                self.addClass('off').find('span').html('<p>[+]</p>')
+            }
+        })
+
+        // $("#name").input(function(){});
+        $("#name").on('input', function(){
+            var val = $(this).val();
+            if (val) {
+                if (!Reg.username(val)) {
+                    $(this).parents('.form-group').first().addClass('err').removeClass('success')
+                } else {
+                    $(this).parents('.form-group').first().addClass('success').removeClass('err')
+                }
+            } else {
+                $(this).parents('.form-group').first().removeClass('success err')
+            }
+        })
+
+        $("#age").on('input', function(evt){
+            var val = $(this).val();
+            if (val) {
+                if (!Reg.num(val)) {
+                    $(this).parents('.form-group').first().addClass('err').removeClass('success')
+                } else {
+                    $(this).parents('.form-group').first().addClass('success').removeClass('err')
+                }
+            } else {
+                $(this).parents('.form-group').first().removeClass('success err')
+            }
+        })
+        $("#position").on('keyup', function(evt){
+            console.log(evt)
+            var val = $(this).val();
+            if (val) {
+                if (!Reg.chs(val)) {
+                    $(this).parents('.form-group').first().addClass('err').removeClass('success')
+                } else {
+                    $(this).parents('.form-group').first().addClass('success').removeClass('err')
+                }
+            } else {
+                $(this).parents('.form-group').first().removeClass('success err')
+            }
+        })
+        $("#name").select(function(){
+            alert($(this).val())
+        })
+        $("#type").change(function(){
+            alert($(this).val())
+        })
+
+        $('.btn-group button:eq(0)').click(function(){
+            $('.form').append(position)
+        })
+        
+    })
+
+</script>
+<style>
+    #aaa{
+        width: 200px;
+        height: 300px;
+        position: fixed;
+        z-index: 1;
+        left: 20px;
+        top: 90px;
+        background-color: #fff;
+        color: #000;
+    }
+</style>
+<!-- <div id="aaa" contenteditable="true">
+    fewfewf
+    <img src="./assets/img/1000_035.png" alt="">
+    fefewfew
+</div> -->
+<!-- <textarea rows="" cols=""><img src="./assets/img/1000_035.png" alt=""></textarea> -->
 </html>
