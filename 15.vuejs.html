@@ -1,0 +1,155 @@
+
+<!Doctype html>
+<html lang="zh-Hans">
+<!--
+    1. 对比 使用 jQuery 跟 前端框架 vue
+-->
+<head>
+    <meta charset="UTF-8">
+    <title>vue-前端培训-信达课堂</title>
+    <link rel="stylesheet" href="./assets/css/reset.css">
+    <link rel="stylesheet" href="./assets/css/common.css">
+    <script src="./assets/js/jquery.min.js"></script>
+    <script src="./assets/js/vue@2.4.2.js"></script>
+    <style>
+    img{
+        width: 80px;
+        height: 80px;
+    }
+    table{
+        width: 100%;
+    }
+    td,th{
+        padding: 10px;
+        text-align: center;
+        border: 1px solid #cc8;
+        border-collapse: collapse;
+    }
+    button{
+        padding: 8px 10px;
+    }
+    </style>
+</head>
+<body>
+    <div id="app">
+        <h1>{{message}}</h1>
+        <table>
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th class="img">头像</th>
+                    <th>姓名</th>
+                    <th>地址</th>
+                    <th>邮箱</th>
+                    <th>操作</th>
+                </tr>
+            </thead>
+            <tbody  v-if="!loading && !user.length">
+                <tr>
+                    <td colspan="10">正在记载</td>
+                </tr>
+            </tbody>
+            <tbody v-else-if="user.length">
+                <tr v-for="(item, index) in user" >
+                    <td>
+                        <input type="checkbox" name="chk">
+                    </td>
+                    <td><img src="./assets/img/avatar_05.png" alt="头像1" border="2"></td>
+                    <td class="name">{{item.name}}</td>
+                    <td>
+                        <address>{{item.address}}</address>
+                    </td>
+                    <td><a :href="'mailto:'+item.email">{{item.email}}</a></td>
+                    <td>
+                        <button type="button" @click="del(item, index)">删除</button>
+                    </td>
+                </tr>
+                
+            </tbody>
+            <tbody v-else>
+                <tr>
+                    <td colspan="10">暂无数据</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    
+</body>
+<script>
+
+    function fun () {
+
+    }
+    var fun = function() {
+
+    }
+    var obj = {};
+    
+
+
+    var app = new Vue({
+        el: '#app', //element
+        data: {
+            message: 'Hello Vue!',
+            loading: false,
+            user : []
+        },
+        methods : {
+            getDate: function(){
+                
+                // return;
+                var that = this
+                that.loading = true
+                setTimeout(function(){
+                    $.ajax({
+                        url: 'http://www.jczx888.com/user.php?callback=?',
+                        // url: 'http://www.jczx888.com/user.php',
+                        type: "GET",
+                        // data: JSON.stringify(p),
+                        contentType: "application/json",
+                        dataType: 'JSON',
+                        success: function(data){
+                            that.user = data;
+                            that.loading = false
+                        }
+                    });
+                }, 2000)
+                
+            },
+            del: function(item, index){
+                var that = this
+                $.ajax({
+                    url: 'https://www.easy-mock.com/mock/595f278a9adc231f357a57fa/example_1499408266910/user',
+                    // url: 'http://www.jczx888.com/user.php',
+                    type: "POST",
+                    // data: '{"userId" : "'+id+'"}',
+                    data: {"userId" : item.id},
+                    // contentType: "application/json",
+                    dataType: 'JSON',
+                    success: function(data){
+                        if (data.success) {
+                            var a = [].concat(that.user)
+                            that.user.splice(index, 1);
+                            var b = [].concat(that.user)
+                            console.log(a, b)
+                        }
+                    }
+                });
+            }
+        },
+        created : function(){
+            // console.log(this.data)
+            // console.log(app.data)
+            console.log(this.user)
+            var that = this;
+            this.message = 'halo'
+            // this.getDate();
+            setTimeout(function(){
+                that.getDate()
+            }, 2000)
+        }
+    })
+
+    
+</script>
+</html>

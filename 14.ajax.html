@@ -1,0 +1,149 @@
+
+<!Doctype html>
+<html lang="zh-Hans">
+<!--
+    1. jQuery Ajax 获取数据 构建页面
+    2. Ajax 原理 - Asynchronous JavaScript and XML（异步的 JavaScript 和 XML）。
+    3. 传参数
+    4. JSONP 跨域
+-->
+<head>
+    <meta charset="UTF-8">
+    <title>Ajax-前端培训-信达课堂</title>
+    <link rel="stylesheet" href="./assets/css/reset.css">
+    <link rel="stylesheet" href="./assets/css/common.css">
+    <script src="./assets/js/jquery.min.js"></script>
+    <style>
+    img{
+        width: 80px;
+        height: 80px;
+    }
+    table{
+        width: 100%;
+    }
+    td,th{
+        padding: 10px;
+        text-align: center;
+        border: 1px solid #cc8;
+        border-collapse: collapse;
+    }
+    button{
+        padding: 8px 10px;
+    }
+    </style>
+</head>
+<body>
+    <table>
+        <thead>
+            <tr>
+                <th>#</th>
+                <th class="img">头像</th>
+                <th>姓名</th>
+                <th>地址</th>
+                <!-- <th>个人主页</th> -->
+                <th>邮箱</th>
+                <th>操作</th>
+            </tr>
+        </thead>
+        <tbody id="content">
+            <tr>
+                <td colspan="10">正在加载</td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+<script>
+    // 同源错误
+    // https:// 127.0.0.1 :80
+
+    $.ajax(
+        {
+            url: 'http://www.jczx888.com/user.php?callback=?',
+            // url: 'http://www.jczx888.com/user.php',
+            type: "GET", // GET,HEAD,PUT,POST,DELETE
+            // data: JSON.stringify(p),
+            contentType: "application/json",
+            dataType: 'JSON',
+            success: function(data){
+                var h = '';
+                
+                for (var i=0; i<data.length; i++) {
+                    h += '<tr data-id="'+ data[i]['userId'] +'">'
+                    h += '<td><input type=  "checkbox" name="chk"></td>'
+                    h += '<td><img src="'+ data[i]['img'] +'" alt="头像1" border="2"></td>'
+                    h += '<td class="name">'+ data[i]['name'] +'</td>'
+                    h += '<td><address>'+ data[i]['address'] +'</address></td>'
+                    h += '<td><a href="mailto:'+ data[i]['email'] +'">'+ data[i]['email'] +'</a></td>'
+                    h += '<td><button type="button" >删除</button></td>'
+                    h += '</tr>'
+                }
+                if (h == '') {
+                    h += '<tr>'
+                    h += '<td colspan="10">暂无数据</td>'
+                    h += '</tr>'
+                }
+
+                $("#content").html(h);
+                // alert('success')
+            },
+            failed : function(data) {
+                // alert('failed')
+            },
+            complete : function(){
+
+            }
+        }
+    );
+
+    $.get('http://www.jczx888.com/user.php?callback=?', function(data) {
+        console.log('get', data);
+    }, 'json')
+
+    $.getJSON('https://www.highcharts.com/samples/data/jsonp.php?filename=usdeur.json&callback=?', function (data) {
+        console.log('getJson' ,data);
+    });
+
+
+    $('body').on('click', 'button', function(){
+        var that = $(this)
+        var id = that.parent().parent().data('id');
+        console.log(id);
+        $.ajax({
+            url: 'https://www.easy-mock.com/mock/595f278a9adc231f357a57fa/example_1499408266910/user',
+            // url: 'http://www.jczx888.com/user.php',
+            type: "POST",
+            data: '{"userId" : "'+id+'"}',
+            contentType: "application/json",
+            // data: {"userId" : id},
+            dataType: 'JSON',
+            success: function(data){
+                console.log(data)
+                if (data.success) {
+                    that.parents('tr').remove();
+                }
+            }
+        });
+    })
+
+    // 创建 http 对象
+    var http = new XMLHttpRequest;
+    // 配置 http 请求方式，请求地址，是否异步
+    http.open('GET', 'https://www.easy-mock.com/mock/595f278a9adc231f357a57fa/example_1499408266910/test', true);
+    // 正式发送请求
+    http.send();
+    // 侦听 http 请求状态
+    // 0: 请求未初始化
+    // 1: 服务器连接已建立
+    // 2: 请求已接收
+    // 3: 请求处理中
+    // 4: 请求已完成，且响应已就绪
+    http.onreadystatechange = function() {
+        if (http.readyState == 4 
+            && http.status == 200 )
+        {
+            // conso    le.log(http.responseText)
+        }
+    }
+
+</script>
+</html>
